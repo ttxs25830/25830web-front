@@ -20,12 +20,12 @@ if (rPathParm) {
       }
       return dict
     })(b64Decode(rQueryParm[2]).split('&'))
-    router.push({
+    router.replace({
       path: opath,
       query: oquery
     })
   } else {
-    router.push({
+    router.replace({
       path: opath
     })
   }
