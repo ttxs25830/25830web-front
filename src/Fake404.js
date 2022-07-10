@@ -1,24 +1,8 @@
-function dealFake404 () {
-  const segmentCount = 0
-  const l = window.location
-  l.replace(
-    l.protocol +
-      '//' +
-      l.hostname +
-      (l.port ? ':' + l.port : '') +
-      l.pathname
-        .split('/')
-        .slice(0, 1 + segmentCount)
-        .join('/') +
-      '/?p=/' +
-      l.pathname
-        .slice(1)
-        .split('/')
-        .slice(segmentCount)
-        .join('/')
-        .replace(/&/g, '~and~') +
-      (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-      l.hash
-  )
-}
-dealFake404()
+import { encode } from 'urlsafe-base64'
+const b64p = encode(location.pathname)
+const b64q = encode(location.search.substring(1))
+location.replace(
+  `${location.protocol}//${location.hostname}${
+    location.port ? ':' + location.port : ''
+  }/?b64p=${b64p}&b64q=${b64q}`
+)
