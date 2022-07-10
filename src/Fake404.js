@@ -1,4 +1,4 @@
-import { encode } from 'urlsafe-base64'
+import { encode } from '@/utils/str-ub64'
 const b64p = encode(location.pathname)
 const b64q = encode(location.search.substring(1))
 location.replace(

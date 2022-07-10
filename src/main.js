@@ -2,7 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import { decode } from 'urlsafe-base64'
+import { decode } from '@/utils/str-ub64'
 
 createApp(App).use(store).use(router).mount('#app')
 

@@ -57,8 +57,8 @@
     "lintOnSave": true,
     "pages": {
       "404": {
-        "entry": "src/Fake404.js",
-        "template": "public/404.html",
+        "entry": "src/fake404.js",
+        "template": "public/index.html",
         "filename": "404.html"
       },
       "index": {
