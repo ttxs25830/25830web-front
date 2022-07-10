@@ -50,5 +50,21 @@
     "last 2 versions",
     "not dead",
     "not ie 11"
-  ]
+  ],
+  "vue": {
+    "publicPath": "./",
+    "lintOnSave": true,
+    "pages": {
+      "index":{
+        "entry": "src/main.js",
+        "template": "public/index.html",
+        "filename": "index.html" 
+      },
+      "404": {
+        "entry": "src/Fake404.js",
+        "template": "public/404.html",
+        "filename": "404.html"
+      }
+    }
+  }
 }
