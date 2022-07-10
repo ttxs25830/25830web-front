@@ -2,13 +2,13 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import { decode } from '@/utils/str-ub64'
+import Base64 from 'js-base64'
 
 createApp(App).use(store).use(router).mount('#app')
 
-const opath = decode(location.search.match(/(^|&)b64p=([^&]*)(&|$)/)[0])
+const opath = Base64.fromBase64(location.search.match(/(^|&)b64p=([^&]*)(&|$)/)[2])
 const oquery = (
-  parmlist = decode(location.search.match(/(^|&)b64q=([^&]*)(&|$)/)[0]).split(
+  parmlist = Base64.fromBase64(location.search.match(/(^|&)b64q=([^&]*)(&|$)/)[2]).split(
     '&'
   )
 ) => {
