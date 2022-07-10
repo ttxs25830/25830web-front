@@ -1,2 +1,0 @@
-(function(){function e(){const e=0,a=window.location;a.replace(a.protocol+"//"+a.hostname+(a.port?":"+a.port:"")+a.pathname.split("/").slice(0,1+e).join("/")+"/?p=/"+a.pathname.slice(1).split("/").slice(e).join("/").replace(/&/g,"~and~")+(a.search?"&q="+a.search.slice(1).replace(/&/g,"~and~"):"")+a.hash)}e()})();
-//# sourceMappingURL=404.aa3f29e2.js.map
