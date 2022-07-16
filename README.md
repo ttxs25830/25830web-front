@@ -1,4 +1,3 @@
-#### Subtree Push
-`git subtree push --prefix dist origin dist`
-#### Ignore CNAME
-`git update-index --assume-unchanged dist/CNAME`
+# 25830web——前端
+### 本项目部署于[www.25830web.top](https://www.25830web.top/)
+
