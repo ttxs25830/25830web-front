@@ -4,34 +4,40 @@
     <p v-if="isWorked">It worked!</p>
     <p v-if="!isWorked">It not worked......</p>
     <p>random number = {{ rand }}</p>
-    <input type="button" v-on:click="stopRand" value="Click Here to Get Your Lucky Number" />
+    <input
+      type="button"
+      v-on:click="stopRand"
+      value="Click Here to Get Your Lucky Number"
+    />
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import { Options, Vue } from 'vue-class-component'
+
+@Options({
   name: 'HelloWorld',
   props: {
     msg: String,
     isWorked: Boolean
-  },
-  data () {
-    return {
-      rand: 0,
-      randObj: null
+  }
+})
+export default class HelloWorld extends Vue {
+  msg = ''
+  isWorked = false
+  rand = 0
+  randObj: null | number = null
+  setRand () {
+    this.rand = Math.floor(Math.random() * (100 + 1))
+  }
+
+  stopRand () {
+    if (this.randObj !== null) {
+      clearInterval(this.randObj)
+      this.randObj = null
     }
-  },
-  methods: {
-    setRand () {
-      this.rand = Math.floor(Math.random() * (100 + 1))
-    },
-    stopRand () {
-      if (this.randObj !== null) {
-        clearInterval(this.randObj)
-        this.randObj = null
-      }
-    }
-  },
+  }
+
   mounted () {
     this.randObj = setInterval(() => {
       this.setRand()
