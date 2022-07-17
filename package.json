@@ -1,12 +1,24 @@
 {
   "name": "25830web-front",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "部署于www.25830web.top前端页面",
   "private": true,
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ttxs25830/25830web-front.git"
+  },
+  "author": "ttxs25830",
+  "license": "GNU",
+  "bugs": {
+    "url": "https://github.com/ttxs25830/25830web-front/issues"
+  },
+  "homepage": "https://github.com/ttxs25830/25830web-front#readme",
   "dependencies": {
     "core-js": "^3.8.3",
     "js-base64": "^3.7.2",
